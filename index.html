@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ถึง กนกวรรณ 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffccd5, #ffe6f0);
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+      color: #d63384;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #ff5e8e;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff87a9;
+    }
+
+    #love-message {
+      margin-top: 40px;
+      font-size: 1.6em;
+      color: #ff4081;
+      display: none;
+    }
+
+    #love-image {
+      display: none;
+      margin-top: 25px;
+    }
+
+    #love-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5e8e;
+      transform: rotate(45deg);
+      top: 100%;
+      animation: floatHeart 5s linear infinite;
+      opacity: 0.8;
+      z-index: 10;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5e8e;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(1) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.2) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>ถึง อ้อย 💌</h1>
+    <p>มีบางอย่างอยากบอกเธอ...</p>
+
+    <button onclick="บอกรัก()">คลิกเพื่อเปิดหัวใจ 💓</button>
+
+    <div id="love-message">สุขสันต์วันครบรอบ 2 เดือนนะ รักอ้อยมาก ๆ เลยนะ 💘 รักที่สุดในโลกเลย 🥺💕</div>
+
+    <div id="love-image">
+      <img src="https://cdn.discordapp.com/attachments/1137971462578376775/1372190378597290095/8807d473-d0b4-4237-97e0-92d992d0d5b6.jpg?ex=6825df60&is=68248de0&hm=94ed74206f2241cf606ba8a5885a25292453f2b2768f7e2cc864329c6101ffb2&" alt="รูปแฟน">
+    </div>
+
+    <footer>
+      ทำด้วยหัวใจ 💘 โดยแฟนของ กนกวรรณ 💞
+    </footer>
+  </div>
+
+  <script>
+    function บอกรัก() {
+      document.getElementById("love-message").style.display = "block";
+      document.getElementById("love-image").style.display = "block";
+      for (let i = 0; i < 20; i++) {
+        createHeart();
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+  </script>
+
+</body>
+</html>
